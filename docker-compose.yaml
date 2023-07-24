@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:15.3
+    environment:
+      POSTGRES_DB: "main"
+      POSTGRES_USER: "api"
+      POSTGRES_PASSWORD: "testpass"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data/pgdata
+    ports:
+      - "17030:5432"
